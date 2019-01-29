@@ -1,1 +1,1 @@
-# hid-mitm
+This just makes the hid-sysmodule only get events for nintendo devices allowing homebrew to access other usb-hid-devices.
