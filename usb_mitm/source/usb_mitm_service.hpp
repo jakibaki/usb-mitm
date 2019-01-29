@@ -33,7 +33,7 @@ class UsbMitmService : public IMitmServiceObject
 
     static bool ShouldMitm(u64 pid, u64 tid)
     {
-        // TODO: hid only
+        // hid only
         return tid == 0x0100000000000013UL;
     }
 
