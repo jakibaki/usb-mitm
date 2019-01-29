@@ -1,0 +1,14 @@
+diff --git a/stratosphere/pm/source/pm_boot2.cpp b/stratosphere/pm/source/pm_boot2.cpp
+index b3059f0..3426ae8 100644
+--- a/stratosphere/pm/source/pm_boot2.cpp
++++ b/stratosphere/pm/source/pm_boot2.cpp
+@@ -234,6 +234,9 @@ void EmbeddedBoot2::Main() {
+     /* Launch tma. */
+     LaunchTitle(Boot2KnownTitleId::tma, FsStorageId_NandSystem, 0, NULL);
+     
++    LaunchTitle((Boot2KnownTitleId) 0x010000000000FFABUL, FsStorageId_None, 0, NULL);
++    WaitForMitm("usb:hs");
++
+     /* Launch default programs. */
+     for (auto &launch_program : g_additional_launch_programs) {
+         if (!maintenance || std::get<bool>(launch_program)) {
